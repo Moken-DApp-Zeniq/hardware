@@ -1,3 +1,4 @@
+import time
 import machine
 from modules.mqtt_client import MQTT
 
@@ -24,6 +25,8 @@ class Middleware:
             print(f'Result: {view}')
             if view == "true":
                 led.on()
+                time.sleep(8)
+                led.off()
             elif view == "false":
                 led.off()
             else:
